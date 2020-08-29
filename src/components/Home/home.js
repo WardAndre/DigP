@@ -17,11 +17,11 @@ export default class Home extends Component {
     getAllFruits() {
         axios.get(`http://pocs.digitalpages.com.br/mock/api/fruits-api/fruits.json`)
         .then(responseFromApi => {
-            console.log(responseFromApi.data)
           this.setState({
             listOfFruits: responseFromApi.data
           })
         })
+        .catch(error => console.log(error))
       }
      
     componentDidMount () {
@@ -32,15 +32,30 @@ export default class Home extends Component {
         
         return (
             <div>
+                <h1> Frutas </h1>
                 {this.state.listOfFruits.map(fruit => {
                     return (
                        <div> 
-                        <h1>{fruit.name}</h1>
-                        <h3>{fruit.calories}</h3>
-                        <img src={fruit.photo} alt={fruit.name}/>
+                        <div class="card">
+                            <img src={fruit.photo} alt={fruit.name} class="card-img-top" />
+
+                            <div class="card-body">
+                                <h5 class="card-title">{fruit.name}</h5>
+                                <p class="card-text">{fruit.calories} calorias</p>
+                                <Link to={{
+                                    pathname: `/details/${fruit.name}`,
+                                    state: {
+                                        listOfFruits: this.state.listOfFruits
+                                    }
+                                    }}>
+                                        Mais informações...
+                                </Link>
+                            </div>
+                        </div>
                         </div> 
                     )
                 })}
+                
             </div>
         )
     }

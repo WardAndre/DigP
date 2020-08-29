@@ -5,12 +5,12 @@ import { Switch, Route } from 'react-router-dom'
 import Fruit from './components/Fruit/fruit';
 
 
-function App() {
+function App(props) {
   return (
     <div className="App">
       <Switch>
        <Route exact path="/" component={Home}/>
-       <Route exact path="/details" component={Fruit}/>
+       <Route exact path="/details/:name" component={Fruit}/>
       </Switch>
     </div>
   );
