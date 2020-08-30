@@ -11,8 +11,24 @@ export default function Fruit(props) {
             <Link to={'/'}>
                 Voltar
             </Link>
-            {console.log(oneFruit)}
-            <p>{oneFruit[0].name}</p>
+    
+            
+
+            <div class="card">
+                <img src={oneFruit[0].photo} alt={oneFruit[0].name} class="card-img-top" />
+
+                <div class="card-body">
+                  <h5 class="card-title">{oneFruit[0].name}</h5>
+                  <p class="card-text">
+                    {oneFruit[0].portion} <br/> <br/>
+                    Calorias: {oneFruit[0].calories} <br/> <br/>
+                    Proteína: {oneFruit[0].protein} <br/> <br/>
+                    Carboidratos: {oneFruit[0].carbohydrates} <br/> <br/>
+                    Fibra: {oneFruit[0].fiber} <br/> <br/>
+                    Gordura: {oneFruit[0].blubber} <br/> <br/>
+                  </p>
+                </div>
+              </div>
         </div>
     )
 }
