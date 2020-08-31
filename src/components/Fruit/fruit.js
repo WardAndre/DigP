@@ -10,9 +10,9 @@ export default function Fruit(props) {
     return (
         <div id="fruit-container">
 
-            <div class='back-link'>
+            <div className='back-link'>
                 <Link 
-                    class='back-link-text'
+                    className='back-link-text'
                     to={'/'}
                 >
                     Voltar
@@ -20,12 +20,12 @@ export default function Fruit(props) {
             </div>        
             
 
-            <div class="single-card">
-                <img src={oneFruit[0].photo} alt={oneFruit[0].name} class="single-card-img-top" />
+            <div className="single-card">
+                <img src={oneFruit[0].photo} alt={oneFruit[0].name} className="single-card-img-top" />
 
-                <div class="single-card-body">
-                  <h5 class="single-card-title">{oneFruit[0].name}</h5>
-                  <p class="single-card-text">
+                <div className="single-card-body">
+                  <h5 className="single-card-title">{oneFruit[0].name}</h5>
+                  <p className="single-card-text">
                     {oneFruit[0].portion} <br/> <br/>
                     Calorias: {oneFruit[0].calories} <br/> <br/>
                     Proteína: {oneFruit[0].protein} <br/> <br/>
