@@ -32,25 +32,25 @@ export default class Home extends Component {
   render() {
     return (
       <div id="home-container">
-        <div class='title'>
+        <div className='title'>
             <h1> Frutas </h1>
         </div>
-        <div class='app-body'>
-        {this.state.listOfFruits.map((fruit) => {
+        <div className='app-body'>
+        {this.state.listOfFruits.map((fruit, idx) => {
           return (
-            <div>
-              <div class="card">
-                <img src={fruit.photo} alt={fruit.name} class="card-img-top" />
+            <div key={idx}>
+              <div className="card">
+                <img src={fruit.photo} alt={fruit.name} className="card-img-top" />
 
-                <div class="card-body">
-                  <h5 class="card-title">{fruit.name}</h5>
-                  <p class="card-text">
+                <div className="card-body">
+                  <h5 className="card-title">{fruit.name}</h5>
+                  <p className="card-text">
                     {fruit.portion} <br/> <br/>
                     Calorias: {fruit.calories}
                   </p>
-                  <div class='link'>
+                  <div className='link'>
                     <Link
-                        class='link-text'
+                        className='link-text'
                         to={{
                         pathname: `/details/${fruit.name}`,
                         state: {
