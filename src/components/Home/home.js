@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import Fruit from "../Fruit/fruit";
 import './styles.css'
 
 export default class Home extends Component {
